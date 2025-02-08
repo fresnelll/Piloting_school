@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Flight</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='delete_styles.css') }}">
+</head>
+<body>
+    <h1>Delete Flight</h1>
+    <form method="post" action="{{ url_for('delete') }}">
+        {% for column in columns %}
+            <label for="{{ column }}">{{ column }}:</label>
+            <input type="text" id="{{ column }}" name="{{ column }}"><br>
+        {% endfor %}
+        <input type="submit" value="Delete Flight">
+    </form>
+    
+
+    <div class="go-back">
+        <a href="/home" class="page-button">Go Back to Home Page</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Management System</title>
+    <link rel="stylesheet" href="static/styles.css">
+    
+</head>
+<body>
+    <header>
+        <img src="static/images/Logo.png" alt="Flight Management System Logo" class="logo">
+        <h1>Welcome to the Flight Management System</h1>
+        <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+    </header>
+    <div class="button-grid">
+        <a href="{{ url_for('search') }}" class="page-button">Search for flights</a>
+        <a href="{{ url_for('add') }}" class="page-button">Add a new flight</a>
+        <a href="{{ url_for('delete') }}" class="page-button">Delete the past flight</a>
+        <a href="{{ url_for('cancelled_flights') }}" class="page-button">Look at the cancelled flights</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Flight Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

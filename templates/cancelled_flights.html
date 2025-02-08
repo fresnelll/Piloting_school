@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelled Flights</title>
+    <link rel="stylesheet" href="static/cancelled_flight_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cancelled Flights</h1>
+        <a href="{{ url_for('home') }}" class="back-home-button">Go Back Home</a>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                    <th>Day of Week</th>
+                    <th>Airline</th>
+                    <th>Flight Number</th>
+                    <th>Tail Number</th>
+                    <th>Origin Airport</th>
+                    <th>Destination Airport</th>
+                    <th>Scheduled Departure</th>
+                    <th>Departure Time</th>
+                    <th>Departure Delay</th>
+                    <th>Taxi Out</th>
+                    <th>Wheels Off</th>
+                    <th>Scheduled Time</th>
+                    <th>Elapsed Time</th>
+                    <th>Air Time</th>
+                    <th>Distance</th>
+                    <th>Wheels On</th>
+                    <th>Taxi In</th>
+                    <th>Scheduled Arrival</th>
+                    <th>Arrival Time</th>
+                    <th>Arrival Delay</th>
+                    <th>Diverted</th>
+                    <th>Cancelled</th>
+                    <th>Cancellation Reason</th>
+                    <th>Air System Delay</th>
+                    <th>Security Delay</th>
+                    <th>Airline Delay</th>
+                    <th>Late Aircraft Delay</th>
+                    <th>Weather Delay</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                <tr>
+                    <td>{{ flight.YEAR }}</td>
+                    <td>{{ flight.MONTH }}</td>
+                    <td>{{ flight.DAY }}</td>
+                    <td>{{ flight.DAY_OF_WEEK }}</td>
+                    <td>{{ flight.AIRLINE }}</td>
+                    <td>{{ flight.FLIGHT_NUMBER }}</td>
+                    <td>{{ flight.TAIL_NUMBER }}</td>
+                    <td>{{ flight.ORIGIN_AIRPORT }}</td>
+                    <td>{{ flight.DESTINATION_AIRPORT }}</td>
+                    <td>{{ flight.SCHEDULED_DEPARTURE }}</td>
+                    <td>{{ flight.DEPARTURE_TIME }}</td>
+                    <td>{{ flight.DEPARTURE_DELAY }}</td>
+                    <td>{{ flight.TAXI_OUT }}</td>
+                    <td>{{ flight.WHEELS_OFF }}</td>
+                    <td>{{ flight.SCHEDULED_TIME }}</td>
+                    <td>{{ flight.ELAPSED_TIME }}</td>
+                    <td>{{ flight.AIR_TIME }}</td>
+                    <td>{{ flight.DISTANCE }}</td>
+                    <td>{{ flight.WHEELS_ON }}</td>
+                    <td>{{ flight.TAXI_IN }}</td>
+                    <td>{{ flight.SCHEDULED_ARRIVAL }}</td>
+                    <td>{{ flight.ARRIVAL_TIME }}</td>
+                    <td>{{ flight.ARRIVAL_DELAY }}</td>
+                    <td>{{ flight.DIVERTED }}</td>
+                    <td>{{ flight.CANCELLED }}</td>
+                    <td>{{ flight.CANCELLATION_REASON }}</td>
+                    <td>{{ flight.AIR_SYSTEM_DELAY }}</td>
+                    <td>{{ flight.SECURITY_DELAY }}</td>
+                    <td>{{ flight.AIRLINE_DELAY }}</td>
+                    <td>{{ flight.LATE_AIRCRAFT_DELAY }}</td>
+                    <td>{{ flight.WEATHER_DELAY }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

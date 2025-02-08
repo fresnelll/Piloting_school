@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Flights</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search_styles.css') }}">
+</head>
+<body>
+    <h1>Search for Flights</h1>
+    <form method="post" action="{{ url_for('search') }}" class="search-form"> <!-- Add the search-form class -->
+        {% for column in columns %}
+            {% if 'DATE' in column %}
+                <label for="{{ column }}">{{ column }}:</label>
+                <input type="date" id="{{ column }}" name="{{ column }}"><br>
+            {% else %}
+                <label for="{{ column }}">{{ column }}:</label>
+                <input type="text" id="{{ column }}" name="{{ column }}"><br>
+            {% endif %}
+        {% endfor %}
+        <input type="submit" value="Search">
+    </form>
+
+    <div class="go-back">
+        <a href="/home" class="page-button">Go Back to Home Page</a>
+    </div>
+</body>
+</html>

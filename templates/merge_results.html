@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merged Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Merged Sorted Flights</h1>
+    {% if merged_flights %}
+    <ul>
+        {% for flight in merged_flights %}
+        <li>
+            <h2>Flight Information:</h2>
+            <ul>
+                {% for key, value in flight.items() %}
+                <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No flights available for merging.</p>
+    {% endif %}
+</body>
+</html>
